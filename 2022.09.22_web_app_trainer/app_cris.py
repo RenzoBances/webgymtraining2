@@ -100,14 +100,14 @@ elif app_mode =='Glute Bridge':
 
     with trainer:        
         st.markdown("TRAINER", unsafe_allow_html=True)
-        #experto = randrange(3)+1
-        experto = 4
+        experto = randrange(3)+1
+        #experto = 4
         video_trainer_file="videos_trainer/Glute Bridges/Glute Bridges"+str(experto)+".mp4"
         
         df_experto = pd.read_csv("videos_trainer/Glute Bridges/Puntos_Glute_Bridges"+str(experto)+".csv")
         #df_experto = pd.read_csv("videos_trainer/Glute Bridges/Puntos_manu.csv")
         del df_experto['segundo']
-        df_costos = pd.read_csv("videos_trainer/Glute Bridges/Costos_Glute Bridge_promedio__.csv")
+        df_costos = pd.read_csv("videos_trainer/Glute Bridges/Costos_Glute Bridge_promedio.csv")
         #df_costos = pd.read_csv("videos_trainer/Glute Bridges/costo_promedio_manu.csv")
 
         #st.table(df_experto)
@@ -292,11 +292,11 @@ elif app_mode =='Glute Bridge':
                                     costo_desde = "Costo desde: "+ str(round(df_costos.Costo_alineamiento[inicio]-df_costos.Desviacion_estandar[inicio],2))
                                     costo_hasta= "Costo hasta: "+ str(round(df_costos.Costo_alineamiento[inicio]+df_costos.Desviacion_estandar[inicio],2))
                                     costo_resultante = "Costo resultante: "+ str(round(resultados_costos[0][1],2))
-                                    st.text(costo_desde)
-                                    st.text(costo_hasta)
-                                    st.text(costo_resultante)
+                                    #st.text(costo_desde)
+                                    #st.text(costo_hasta)
+                                    #st.text(costo_resultante)
                                     #st.text("Se realizó la pose del segundo cero")
-                                    st.components.v1.html(f"""<span style="color:blue">Se realizó la pose del segundo cero</span>""")
+                                    #st.components.v1.html(f"""<span style="color:blue">Se realizó la pose del segundo cero</span>""")
 
                                     if results.pose_landmarks is not None:
 
@@ -366,11 +366,11 @@ elif app_mode =='Glute Bridge':
                                     costo_desde = "Costo desde: "+ str(round(df_costos.Costo_alineamiento[inicio]-df_costos.Desviacion_estandar[inicio],2))
                                     costo_hasta= "Costo hasta: "+ str(round(df_costos.Costo_alineamiento[inicio]+df_costos.Desviacion_estandar[inicio],2))
                                     costo_resultante = "Costo resultante: "+ str(round(resultados_costos[0][1],2))
-                                    if resultados_costos[0][1] <=30:
-                                        st.text(costo_desde)
-                                        st.text(costo_hasta)
-                                        st.text(costo_resultante)
-                                        st.components.v1.html(f"""<span style="color:red">No se realizó el ejercicio correctamente!!!!!</span>""")
+                                    #if resultados_costos[0][1] <=30:
+                                    #    st.text(costo_desde)
+                                    #    st.text(costo_hasta)
+                                    #    st.text(costo_resultante)
+                                    #    st.components.v1.html(f"""<span style="color:red">No se realizó el ejercicio correctamente!!!!!</span>""")
 
                                     if results.pose_landmarks is not None:
 
@@ -443,10 +443,10 @@ elif app_mode =='Glute Bridge':
                                     costo_desde = "Costo desde: "+ str(round(df_costos.Costo_alineamiento[inicio]-df_costos.Desviacion_estandar[inicio],2))
                                     costo_hasta= "Costo hasta: "+ str(round(df_costos.Costo_alineamiento[inicio]+df_costos.Desviacion_estandar[inicio],2))
                                     costo_resultante = "Costo resultante: "+ str(round(resultados_costos[0][1],2))
-                                    st.text(costo_desde)
-                                    st.text(costo_hasta)
-                                    st.text(costo_resultante)
-                                    st.components.v1.html(f"""<span style="color:blue">Se realizó la pose del segundo correspondiente</span>""")
+                                    #st.text(costo_desde)
+                                    #st.text(costo_hasta)
+                                    #st.text(costo_resultante)
+                                    #st.components.v1.html(f"""<span style="color:blue">Se realizó la pose del segundo correspondiente</span>""")
 
                                     if results.pose_landmarks is not None:
 
@@ -516,10 +516,10 @@ elif app_mode =='Glute Bridge':
                                     costo_desde = "Costo desde: "+ str(round(df_costos.Costo_alineamiento[inicio]-df_costos.Desviacion_estandar[inicio],2))
                                     costo_hasta= "Costo hasta: "+ str(round(df_costos.Costo_alineamiento[inicio]+df_costos.Desviacion_estandar[inicio],2))
                                     costo_resultante = "Costo resultante: "+ str(round(resultados_costos[0][1],2))
-                                    st.text(costo_desde)
-                                    st.text(costo_hasta)
-                                    st.text(costo_resultante)
-                                    st.components.v1.html(f"""<span style="color:red">No se realizó el ejercicio correctamente!!!!!</span>""")
+                                    #st.text(costo_desde)
+                                    #st.text(costo_hasta)
+                                    #st.text(costo_resultante)
+                                    #st.components.v1.html(f"""<span style="color:red">No se realizó el ejercicio correctamente!!!!!</span>""")
 
                                     if results.pose_landmarks is not None:
 
