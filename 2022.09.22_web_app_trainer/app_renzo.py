@@ -120,6 +120,7 @@ elif app_mode =='Squats':
                 st.video(video_trainer_file, format="video/mp4", start_time=0)
             with user:
                     main.start(exercise_to_do)
+                    app_mode = '(home)'
 
 elif app_mode =='Abs':
         app_mode ='Crunches'
