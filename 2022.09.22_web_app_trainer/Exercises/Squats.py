@@ -34,7 +34,7 @@ def start(sets, reps):
         # Setup mediapipe instance
         with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
             cap.isOpened()
-            while reps_counter < reps:
+            while reps_counter <= reps:
                 ret, frame = cap.read()
                 
                 # Recolor image to RGB
@@ -96,9 +96,11 @@ def start(sets, reps):
                         stage = "down"
                     elif angle < 100 and stage =='down':
                         stage = "up"
+                        time.sleep(1)
                         reps_counter +=1           
             
                     #cv2.imshow('Mediapipe Feed', image)
+ 
                     stframe.image(image,channels = 'BGR',use_column_width=True)
 
                     # Used to end early
@@ -111,19 +113,22 @@ def start(sets, reps):
             if (sets_counter!=sets):
                 try:
                     cv2.putText(image, 'FINISHED SET', (100,250), cv2.FONT_HERSHEY_SIMPLEX, 2, (255,0,0), 3, cv2.LINE_AA)
-                    cv2.imshow('Mediapipe Feed', image)
+                    #cv2.imshow('Mediapipe Feed', image)
+                    stframe.image(image,channels = 'BGR',use_column_width=True)
                     cv2.waitKey(1)
-                    time.sleep(60)   
+                    time.sleep(20)   
 
                 except:
-                    cv2.imshow('Mediapipe Feed', image)
+                    #cv2.imshow('Mediapipe Feed', image)
+                    stframe.image(image,channels = 'BGR',use_column_width=True)
                     pass 
                             
     cv2.rectangle(image, (50,180), (600,400), (0,255,0), -1)
     cv2.putText(image, 'FINISHED EXERCISE', (100,250), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255,255,255), 3, cv2.LINE_AA)
-    cv2.putText(image, 'REST FOR 60s' , (155,350), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255,255,255), 3, cv2.LINE_AA)   
-    cv2.imshow('Mediapipe Feed', image)
+    cv2.putText(image, 'REST FOR 30s' , (155,350), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255,255,255), 3, cv2.LINE_AA)   
+    #cv2.imshow('Mediapipe Feed', image)
+    stframe.image(image,channels = 'BGR',use_column_width=True)
     cv2.waitKey(1) 
-    time.sleep(60)                      
+    time.sleep(20)               
     cap.release()
     cv2.destroyAllWindows()
